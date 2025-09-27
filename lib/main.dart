@@ -11,26 +11,99 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bidding page',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    home:  Scaffold(
+      appBar: AppBar(
+        title: Text('widget tree'),
       ),
-      home: const MyHomePage(title: 'Bidding Page in Flutter'),
+      body: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+                padding: EdgeInsets.all(16.0),
+              child: Column(
+                children: <Widget>[
+              Row(
+              children: <Widget>[
+                Container(
+                color: Colors.yellow,
+                height: 40.0,
+                width: 40.0,
+              ),
+            Padding(padding: EdgeInsets.all(16.0),),
+            Expanded(
+                child: Container(
+                  color: Colors.amber,
+                  height: 40.0,
+                  width: 40.0,
+                ),
+            ),
+            Padding(padding: EdgeInsets.all(16.0),),
+            Container(
+              color: Colors.brown,
+              height: 40.0,
+              width: 40.0,
+            ),
+                  ],
+                ),
+                  Padding(padding: EdgeInsets.all(16.0),),
+                  Row(
+                    children: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          Container(
+                            color:  Colors.yellow,
+                            height: 60.0,
+                            width: 60.0,
+                          ),
+                          Padding(padding: EdgeInsets.all(16.0),),
+                          Container(
+                            color: Colors.brown,
+                            height: 20.0,
+                            width: 20.0,
+                          ),
+                          Divider(),
+                          Row(
+                            children: <Widget>[
+                              CircleAvatar(
+                                backgroundColor: Colors.lightGreen,
+                                radius: 100.0,
+                                child: Stack(
+                                  children: <Widget>[
+                                    Container(
+                                      height: 100.0,
+                                      width: 100.0,
+                                      color: Colors.yellow,
+                                    ),
+                                    Container(
+                                      height: 60.0,
+                                      width: 60.0,
+                                      color: Colors.amber,
+                                    ),
+                                    Container(
+                                      height: 50.0,
+                                      width: 50.0,
+                                      color: Colors.brown ,
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          Divider(),
+                          Text('End of the world'),
+
+                        ],
+                      )
+                    ],
+                  )
+
+              ]
+            )
+          )),
+
+    )
+    )
     );
   }
 }
