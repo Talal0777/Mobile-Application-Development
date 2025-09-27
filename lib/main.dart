@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
     home:  Scaffold(
       appBar: AppBar(
-        title: Text('widget tree'),
+        title: Text('Talal 777'),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
